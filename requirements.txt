@@ -6,11 +6,13 @@ bs4
 python-dotenv
 langchain 
 langchain-openai
+langchain-huggingface
 langchain-text-splitters
 langchain-community
 langgraph
 langgraph_prebuilt
 langgraph_checkpoint
+langchain-chroma
 fastapi
 pydantic
 uvicorn
@@ -21,3 +23,4 @@ webdriver_manager
 prefect
 sentence_transformers
 trafilatura
+chromadb
