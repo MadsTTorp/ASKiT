@@ -1,6 +1,15 @@
+import sys
+import os
+
+# Add the project root directory to sys.path
+current_dir = os.path.dirname(__file__)
+project_root = os.path.abspath(os.path.join(current_dir, ".."))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
 import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
-from agent.rag_agent import app  # Your compiled agent from the agent module
+from agent.rag_agent import app  
 
 # Set the title of the app
 st.title("Simple RAG Chat Interface")
@@ -22,7 +31,7 @@ def run_agent(user_input):
     state = {"messages": st.session_state.conversation, "meta": {}}
     
     # Run the agent which is expected to process the state and return new messages
-    new_state = app(state)  # This returns a state with additional messages
+    new_state = app.invoke(state)
     
     # Append any new messages from the agent to the conversation
     for msg in new_state.get("messages", []):
