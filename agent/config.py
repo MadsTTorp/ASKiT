@@ -26,16 +26,22 @@ def get_opensource_models():
 
 def get_vectorstore(embeddings):
     provider = os.getenv("USE_PROVIDER", "huggingface").lower()
+    base_dir = os.path.join(os.getcwd(), "data", "vectorstores")
+    if not os.path.exists(base_dir):
+        os.makedirs(base_dir)
+    
     if provider == "openai":
+        persist_directory = os.path.join(base_dir, "openai_chroma_langchain_db")
         return Chroma(
-            persist_directory='./openai_chroma_langchain_db', 
-            embedding_function=embeddings, 
+            persist_directory=persist_directory,
+            embedding_function=embeddings,
             collection_name='openai_embeddings'
         )
     elif provider == "huggingface":
+        persist_directory = os.path.join(base_dir, "huggingface_chroma_langchain_db")
         return Chroma(
-            persist_directory='./huggingface_chroma_langchain_db', 
-            embedding_function=embeddings, 
+            persist_directory=persist_directory,
+            embedding_function=embeddings,
             collection_name='huggingface_embeddings'
         )
     else:
