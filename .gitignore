@@ -1,3 +1,5 @@
 .env
 development/huggingface_chroma_langchain_db
 development/openai_chroma_langchain_db
+uploaded_files/*
+data/*
