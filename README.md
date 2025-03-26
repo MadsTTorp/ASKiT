@@ -1,6 +1,6 @@
 # ASKiT: Chat with Your Data
 
-ASKiT is a Retrieval-Augmented Generation (RAG) chat application that leverages LangChain, vector stores, and large language models to create a conversational interface powered by your uploaded documents. This project uses Streamlit for the front-end, providing an intuitive and dark-themed UI for uploading documents, creating a knowledge base, and interacting with an AI-powered chat agent.
+ASKiT is a Retrieval-Augmented Generation (RAG) chat application that leverages LangChain, vector stores, and large language models to create a conversational interface powered by your uploaded documents. This project uses Streamlit for the front-end, providing an intuitive UI for uploading documents, creating a knowledge base, and interacting with an AI-powered chat agent.
 
 ## Table of Contents
 
