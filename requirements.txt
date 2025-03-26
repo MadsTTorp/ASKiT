@@ -24,3 +24,5 @@ prefect
 sentence_transformers
 trafilatura
 chromadb
+PyPDF2
+streamlit
